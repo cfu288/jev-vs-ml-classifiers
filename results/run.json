@@ -1,0 +1,167 @@
+{
+  "started": "2026-09-27T22:15:39.653084+00:00",
+  "datasets_run": [
+    "diabetes",
+    "titanic",
+    "wine",
+    "diabetes130",
+    "adult"
+  ],
+  "models_run": [
+    "api",
+    "bart"
+  ],
+  "variants": [
+    "list",
+    "short",
+    "structured"
+  ],
+  "seed": 42,
+  "test_size": 0.1,
+  "kfold_below_rows": 2000,
+  "concurrency": 16,
+  "attempts": 3,
+  "api_models": [
+    {
+      "name": "JEV (zero-shot)",
+      "key": "jev",
+      "provider": "jev",
+      "model": "jev-1.13.0",
+      "effort": null,
+      "requests_per_minute": 1200
+    },
+    {
+      "name": "GPT-5-nano (zero-shot)",
+      "key": "nano",
+      "provider": "openai",
+      "model": "gpt-5-nano-2025-08-07",
+      "effort": "minimal",
+      "requests_per_minute": 10000
+    },
+    {
+      "name": "GPT-5-mini (zero-shot)",
+      "key": "mini",
+      "provider": "openai",
+      "model": "gpt-5-mini-2025-08-07",
+      "effort": "minimal",
+      "requests_per_minute": 10000
+    },
+    {
+      "name": "GPT-6-luna (zero-shot)",
+      "key": "luna",
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "effort": "none",
+      "requests_per_minute": 10000
+    }
+  ],
+  "hf_checkpoints": {
+    "BART-MNLI (zero-shot)": "facebook/bart-large-mnli",
+    "ModernBERT (fine-tuned)": "answerdotai/ModernBERT-base"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "openai": "3.16.2",
+    "typesafe-sdk": "0.7.1",
+    "transformers": "5.17.0",
+    "torch": "2.14.0",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "cpu": "AMD Ryzen 9 9900X 12-Core Processor",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "datasets": {
+    "diabetes": {
+      "n_folds": 10,
+      "n_train": [
+        691,
+        691,
+        691,
+        691,
+        691,
+        691,
+        691,
+        691,
+        692,
+        692
+      ],
+      "n_test": 768,
+      "test_rows_sha256": "63c8ba1c8fffc69b8b5d69d715636e00cac0c84f8b5237aa668395c4190a7b7d",
+      "majority_share": 0.6510416666666666,
+      "truncated_test_rows": {
+        "BART-MNLI (zero-shot)": 0
+      }
+    },
+    "titanic": {
+      "n_folds": 10,
+      "n_train": [
+        1178,
+        1178,
+        1178,
+        1178,
+        1178,
+        1178,
+        1178,
+        1178,
+        1178,
+        1179
+      ],
+      "n_test": 1309,
+      "test_rows_sha256": "4c11225274636ec0537bd010f9875e132a20f9dfff56fb50da923508df10baf6",
+      "majority_share": 0.6180290297937356,
+      "truncated_test_rows": {
+        "BART-MNLI (zero-shot)": 0
+      }
+    },
+    "wine": {
+      "n_folds": 10,
+      "n_train": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        161,
+        161
+      ],
+      "n_test": 178,
+      "test_rows_sha256": "cc47c86fa65eee8808c1a83db63c6553132c5d0ac7dce7a759c0df052d13a76f",
+      "majority_share": 0.398876404494382,
+      "truncated_test_rows": {
+        "BART-MNLI (zero-shot)": 0
+      }
+    },
+    "diabetes130": {
+      "n_folds": 1,
+      "n_train": [
+        89469
+      ],
+      "n_test": 9874,
+      "test_rows_sha256": "c3e2404b2476f599c11afb48af710dcc4e2cbc488773dee757e5ea4493927f7e",
+      "majority_share": 0.8878873810006077,
+      "truncated_test_rows": {
+        "BART-MNLI (zero-shot)": 0
+      }
+    },
+    "adult": {
+      "n_folds": 1,
+      "n_train": [
+        43957
+      ],
+      "n_test": 4885,
+      "test_rows_sha256": "2a8ad247151570f557fe03b03e889da87a3701418aea555db8343bd2ba2e94c1",
+      "majority_share": 0.7600818833162744,
+      "truncated_test_rows": {
+        "BART-MNLI (zero-shot)": 0
+      }
+    }
+  },
+  "finished": "2026-09-27T23:00:18.191719+00:00",
+  "merged_from": {
+    "API models and BART, all prompt variants": "the run this manifest describes",
+    "sklearn models, baseline and ModernBERT": "earlier runs of the same code, started 2026-09-25T02:27:20.452991+00:00 (unchanged code paths)"
+  }
+}
